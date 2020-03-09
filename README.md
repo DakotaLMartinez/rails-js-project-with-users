@@ -1,24 +1,11 @@
-# README
+# Rails/JS Project with Users
+After running `rails new` and making our first commit, we'll add devise.
+```
+bundle add devise
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+read the Devise docs on github for more info.
+```
+rails g devise:install
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
