@@ -10,6 +10,14 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+    respond_to do |format|
+      format.html { }
+      format.json { 
+        options = {}
+        options[:include] = [:tracks, :'tracks.name', :'tracks.duration', :'tracks.last_fm_url', :'tracks.artist_name', :'tracks.artist_mbid', :'tracks.album_mbid', :'tracks.album_id' ]
+        render json: AlbumSerializer.new(@album, options).serialized_json 
+      }
+    end
   end
 
   # GET /albums/new
