@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tracks
   resources :albums
   get 'welcome/home'
   root 'welcome#home'

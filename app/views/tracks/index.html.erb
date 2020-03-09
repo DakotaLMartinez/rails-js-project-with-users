@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tracks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Duration</th>
+      <th>Last fm url</th>
+      <th>Artist name</th>
+      <th>Artist mbid</th>
+      <th>Album mbid</th>
+      <th>Album</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracks.each do |track| %>
+      <tr>
+        <td><%= track.name %></td>
+        <td><%= track.duration %></td>
+        <td><%= track.last_fm_url %></td>
+        <td><%= track.artist_name %></td>
+        <td><%= track.artist_mbid %></td>
+        <td><%= track.album_mbid %></td>
+        <td><%= track.album_id %></td>
+        <td><%= link_to 'Show', track %></td>
+        <td><%= link_to 'Edit', edit_track_path(track) %></td>
+        <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Track', new_track_path %>
