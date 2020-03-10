@@ -59,3 +59,27 @@ to pass info from the server about whether a user is currently logged in, you ca
 You can then read the value from the input from your JS to see whether you have a user logged in or not.
 
 When you make fetch requests to the server, you'll be able to access `current_user` in order to see data associated with the currently logged in user.
+
+When you make fetch requests that are not GET requests, you'll need to include the CSRF-token that comes from the meta tags in your head (delivered via application layout).
+
+This line of code gives you the token you'll need:
+```
+document.querySelector('meta[name="csrf-token"]').content
+```
+
+You'll need to include it as an `'X-CSRF-Token'` header in the request. Here's an example:
+
+```
+static createAlbum(albumAttributes) {
+    return fetch(`${AlbumAPI.base_url}/albums`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+      },
+      body: JSON.stringify(albumAttributes)
+    })
+      .then(res => res.json())
+  }
+```
