@@ -5,11 +5,13 @@ class TracksController < ApplicationController
   # GET /tracks.json
   def index
     @tracks = Track.all
+    render json: @tracks
   end
 
   # GET /tracks/1
   # GET /tracks/1.json
   def show
+    render json: @track
   end
 
   # GET /tracks/new

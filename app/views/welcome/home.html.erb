@@ -1,2 +1,6 @@
-<h1>Welcome#home</h1>
-<p>Find me in app/views/welcome/home.html.erb</p>
+<%= javascript_pack_tag 'albums' %>
+<nav class="ph4 pv2">
+  <a href="#/home" class="albumsIndex link">Home</a>
+</nav>
+<input type="hidden" id="signed_in" value="<%= user_signed_in? %>"/>
+<div class="ph4" id="root"></div>
