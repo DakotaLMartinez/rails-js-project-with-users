@@ -1,5 +1,7 @@
 # Rails/JS Project with Users
+
 After running `rails new` and making our first commit, we'll add devise.
+## Adding Users
 ```
 bundle add devise
 ```
@@ -20,9 +22,10 @@ rails db:migrate
 ```
 Then we'll boot up a server and try to log in at http://localhost:3000/users/sign_in
 
+## Adding our JS
 add your js to `app/javascript/packs/albums.js`
 
-
+## Adding a home for our Single Page App
 add a controller action to serve up your app from:
 
 ```
@@ -44,7 +47,7 @@ Set your root route to welcome/home
 ```
 root 'welcome#home'
 ```
-
+## How users will log in
 To tell users to log in, you can add a link to users/sign_in
 ```
 <a href="/users/sign_in">Sign in</a>
@@ -57,9 +60,9 @@ to pass info from the server about whether a user is currently logged in, you ca
 ```
 
 You can then read the value from the input from your JS to see whether you have a user logged in or not.
-
+## Accessing User Data
 When you make fetch requests to the server, you'll be able to access `current_user` in order to see data associated with the currently logged in user.
-
+## Handling CSRF issues
 When you make fetch requests that are not GET requests, you'll need to include the CSRF-token that comes from the meta tags in your head (delivered via application layout).
 
 This line of code gives you the token you'll need:
