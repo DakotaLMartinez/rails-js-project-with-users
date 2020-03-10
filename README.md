@@ -92,3 +92,5 @@ static createAlbum(albumAttributes) {
       .then(res => res.json())
   }
 ```
+
+P.S. I'm the best!
