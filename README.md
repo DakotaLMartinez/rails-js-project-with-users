@@ -25,6 +25,12 @@ Then we'll boot up a server and try to log in at http://localhost:3000/users/sig
 ## Adding our JS
 add your js to `app/javascript/packs/albums.js`
 
+## CSS Library Loading
+Because we're using Tachyons for the Album Grid project, we'll need to add this stylesheet link tag to the application layout:
+```
+<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+```
+
 ## Adding a home for our Single Page App
 add a controller action to serve up your app from:
 
